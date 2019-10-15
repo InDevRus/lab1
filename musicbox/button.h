@@ -11,7 +11,7 @@ public:
         pinMode(pin, INPUT_PULLUP);
     }
 
-    bool wasPressed()
+    bool isPressed()
     {
         state = digitalRead(pin);
         return state == LOW;

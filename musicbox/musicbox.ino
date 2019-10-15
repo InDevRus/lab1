@@ -15,7 +15,7 @@ const int notesByButton[buttonsCount] = {
     NOTE_B2,
 };
 
-Button *buttons[8];
+Button *buttons[buttonsCount];
 
 void setup()
 {
@@ -32,12 +32,13 @@ void loop()
     for (auto number = 0; number < buttonsCount; number++)
     {
         auto &button = *buttons[number];
-        if (button.wasPressed())
+        if (button.isPressed())
         {
             anyWasPressed = true;
             tone(buzzerPin, notesByButton[number]);
         }
     }
+
     if (!anyWasPressed)
     {
         noTone(buzzerPin);
